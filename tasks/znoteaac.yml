@@ -22,7 +22,7 @@
   lineinfile:
     dest: /home/otsmanager/www/public_html/config.php
     regexp: \$config\['sqlDatabase'\]
-    line: "        $config['sqlDatabase'] = 'forgottenserver';"
+    line: "        $config['sqlDatabase'] = 'sabrehaven';"
 
 - name: Configure SQL host
   lineinfile:

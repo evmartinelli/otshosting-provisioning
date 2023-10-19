@@ -25,11 +25,11 @@
     - tfs.service
     - tfs-gdb.service
 
-- name: Download latest TFS from git
+- name: Download SabrehavenServer from git
   git:
-    repo: https://github.com/otland/forgottenserver.git
+    repo: https://github.com/evmartinelli/SabrehavenServer.git
     dest: /home/otsmanager/forgottenserver
-    version: "1.4"
+    version: "38-introduce-8-0-support"
   become: true
   become_user: otsmanager
 
@@ -54,13 +54,13 @@
 
 - name: Create database for TFS
   mysql_db:
-    name: forgottenserver
+    name: sabrehaven
 
 - name: Import database for TFS
   mysql_db:
     name: forgottenserver
     state: import
-    target: /home/otsmanager/forgottenserver/schema.sql
+    target: /home/otsmanager/forgottenserver/sabrehaven.sql
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: Copy config.lua.dist to config.lua if necessary
@@ -114,7 +114,7 @@
   become_user: otsmanager
 
 - name: Compile forgottenserver source
-  command: make -j2
+  command: make
   args:
     chdir: /home/otsmanager/forgottenserver/build
   tags: compile
