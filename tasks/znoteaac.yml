@@ -3,6 +3,7 @@
   git:
     repo: https://github.com/Znote/ZnoteAAC.git
     dest: /home/otsmanager/www/public_html
+    force: yes
   become: true
   become_user: otsmanager
 
