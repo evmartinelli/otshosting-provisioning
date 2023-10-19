@@ -29,7 +29,8 @@
   git:
     repo: https://github.com/evmartinelli/SabrehavenServer.git
     dest: /home/otsmanager/forgottenserver
-    version: "38-introduce-8-0-support"
+    version: 38-introduce-8-0-support
+    force: yes
   become: true
   become_user: otsmanager
 
