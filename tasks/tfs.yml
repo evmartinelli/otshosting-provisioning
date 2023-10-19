@@ -63,13 +63,13 @@
     target: /home/otsmanager/forgottenserver/sabrehaven.sql
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
-- name: Copy config.lua.dist to config.lua if necessary
-  copy:
-    dest: /home/otsmanager/forgottenserver/config.lua
-    src: /home/otsmanager/forgottenserver/config.lua.dist
-    remote_src: yes
-    owner: otsmanager
-    group: otsmanager
+# - name: Copy config.lua.dist to config.lua if necessary
+#   copy:
+#     dest: /home/otsmanager/forgottenserver/config.lua
+#     src: /home/otsmanager/forgottenserver/config.lua.dist
+#     remote_src: yes
+#     owner: otsmanager
+#     group: otsmanager
 
 - name: Put mysqlHost for database in config.lua
   lineinfile:
