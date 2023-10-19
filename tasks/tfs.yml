@@ -59,7 +59,7 @@
 
 - name: Import database for TFS
   mysql_db:
-    name: forgottenserver
+    name: sabrehaven
     state: import
     target: /home/otsmanager/forgottenserver/sabrehaven.sql
     login_unix_socket: /var/run/mysqld/mysqld.sock
